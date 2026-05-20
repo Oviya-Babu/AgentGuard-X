@@ -6,7 +6,7 @@ AgentGuard-X is a production-grade security mesh that sits between autonomous AI
 
 ---
 
-## 🔐 Core Security Principle
+## Core Security Principle
 
 > **"Never trust agent output. Always verify intent before execution."**
 
@@ -14,7 +14,7 @@ AgentGuard-X enforces **inline, pre-execution security validation** across the e
 
 ---
 
-## 🚀 What It Does
+## What It Does
 
 ✓ **Intercepts** all tool calls before execution
 ✓ **Validates** agent identity, authorization, and rate limits
@@ -25,7 +25,7 @@ AgentGuard-X enforces **inline, pre-execution security validation** across the e
 
 ---
 
-## 🧠 Architecture Overview
+## Architecture Overview
 
 ```
 AI Agent
@@ -53,7 +53,7 @@ Tool Execution & Result to Agent
 
 ---
 
-## ⚡ Quick Start
+## Quick Start
 
 ### 1. Install Dependencies
 
@@ -76,7 +76,7 @@ python scripts/test_scenarios.py
 
 ---
 
-## 🔎 Observability Endpoints
+## Observability Endpoints
 
 ### Health Check (Public)
 
@@ -106,12 +106,11 @@ Response:
 }
 ```
 
-> ⚠️ Internal service details (Redis/OPA URLs, ports) are intentionally hidden.
+> Internal service details (Redis/OPA URLs, ports) are intentionally hidden.
 
 ---
 
-### Security Metrics (Protected 🔐)
-
+### Security Metrics (Protected)
 ```bash
 curl http://localhost:8000/metrics/security \
   -H "x-api-key: <admin-key>"
@@ -131,7 +130,7 @@ Response (Aggregated Only):
 
 ---
 
-## 🛡️ Security Features
+## Security Features
 
 ### ✓ Fail-Closed Design
 
@@ -142,7 +141,7 @@ Response (Aggregated Only):
 
 ---
 
-### ✓ Identity & Access Control
+### Identity & Access Control
 
 * JWT validation (**RS256 recommended over HS256**)
 * Agent registration via Redis session
@@ -150,7 +149,7 @@ Response (Aggregated Only):
 
 ---
 
-### ✓ Attack Detection
+### Attack Detection
 
 * Prompt Injection (pattern + semantic detection)
 * Data Exfiltration (multi-step sequence analysis)
@@ -159,7 +158,7 @@ Response (Aggregated Only):
 
 ---
 
-### ✓ Output Protection
+### Output Protection
 
 * PII detection (Presidio)
 * Redaction format: `<ENTITY_TYPE_N>`
@@ -167,7 +166,7 @@ Response (Aggregated Only):
 
 ---
 
-### ✓ Observability (Safe by Design)
+###Observability (Safe by Design)
 
 * Structured logs only (no raw inputs/outputs)
 * Trace IDs for debugging
@@ -175,7 +174,7 @@ Response (Aggregated Only):
 
 ---
 
-## 🔐 Security Hardening (IMPORTANT)
+## Security Hardening (IMPORTANT)
 
 ### 1. JWT Security
 
@@ -221,7 +220,7 @@ Track sequences across sessions to prevent distributed attacks.
 
 ---
 
-## 📊 Performance Targets
+## Performance Targets
 
 | Metric               | Target |
 | -------------------- | ------ |
@@ -231,7 +230,7 @@ Track sequences across sessions to prevent distributed attacks.
 
 ---
 
-## 🧪 Test Scenarios
+##Test Scenarios
 
 | Scenario            | Expected Result |
 | ------------------- | --------------- |
@@ -244,73 +243,3 @@ Track sequences across sessions to prevent distributed attacks.
 
 ---
 
-## ⚠️ Known Limitations (Important)
-
-AgentGuard-X is designed for strong enforcement, but:
-
-* Pattern-based detection can be bypassed by advanced prompt obfuscation
-* Cross-session attack correlation is limited (future enhancement)
-* PII detection depends on model accuracy (not perfect)
-* Behavioral scoring depends on triage engine latency
-* Metrics endpoints must remain protected to prevent feedback attacks
-
----
-
-## 🔮 Future Enhancements
-
-* LLM-based semantic intent verification
-* Cross-agent behavioral graph analysis
-* Zero-trust agent identity scoring
-* Adaptive policy learning engine
-* Adversarial prompt simulation testing
-
----
-
-## 🧱 Project Structure
-
-```
-agentguard/
-├── app/
-├── tests/
-├── scripts/
-├── policies/
-├── logs/
-└── README.md
-```
-
----
-
-## ✅ Success Criteria
-
-✓ Clean requests → ALLOW
-✓ Malicious inputs → BLOCK
-✓ PII never logged
-✓ Fail-closed enforced
-✓ No sensitive data leakage
-
----
-
-## 🧠 Key Insight
-
-> AgentGuard-X shifts security from **monitoring what happened**
-> to **controlling what is allowed to happen**
-
----
-
-## 📌 License
-
-Proprietary — AgentGuard-X
-
----
-
-## 💬 Support
-
-Refer to:
-
-* TESTING_GUIDE.md
-* QUICK_TEST_REFERENCE.md
-* Source code documentation
-
----
-
-**AgentGuard-X — Securing AI from intent to execution.**
